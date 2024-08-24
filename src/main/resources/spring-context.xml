@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bbsService"  class="com.spring.multiedu.service.BbsService">
+    <!--setter로 주입 시-->
+    <!--<property name="bbsDAO" ref="bbsDAO"/>-->
+    <!--    생성자로 주입    -->
+        <constructor-arg ref="bbsDAO"/>
+        <property name="anotherDAO" ref="anotherDAO"/>
+    </bean>
+    <bean id="bbsDAO" class="com.spring.multiedu.dao.BbsDAO" />
+    <bean id="anotherDAO" class="com.spring.multiedu.dao.AnotherDAO"/>
+</beans>
