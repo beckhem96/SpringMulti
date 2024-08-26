@@ -16,17 +16,20 @@
     </listener>
 
     <servlet>
-        <servlet-name>appServlet</servlet-name>
+        <servlet-name>dispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+<!--        초기 파라미터 설정-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
+<!--            Bean 설정 파일 경로 설정-->
             <param-value>/WEB-INF/servlet-context.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>appServlet</servlet-name>
+        <servlet-name>dispatcherServlet</servlet-name>
+<!--        아래 url 설정으로 통해 모든 경로가 프론트 컨트롤러인 dispatcherServlet 거치게 됨-->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
