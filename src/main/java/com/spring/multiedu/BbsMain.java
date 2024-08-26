@@ -1,14 +1,15 @@
 package com.spring.multiedu;
 
-import com.spring.multiedu.dao.BbsDAO;
+import com.spring.multiedu.service.BbsService;
+import com.spring.multiedu.vo.ArticleVO;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BbsMain {
     public static void main(String[] args) {
         AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("/spring-context.xml");
-        BbsDAO dao = ctx.getBean("bbsDAO", BbsDAO.class);
-        int result = dao.addTwoNumber(1, 2);
-        System.out.println(result);
+        BbsService service = ctx.getBean("bbsService", BbsService.class);
+        service.registerArticle(new ArticleVO());
+//        System.out.println(result);
     }
 }

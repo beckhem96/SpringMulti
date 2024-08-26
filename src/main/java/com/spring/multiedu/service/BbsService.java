@@ -1,20 +1,18 @@
 package com.spring.multiedu.service;
 
-import com.spring.multiedu.dao.AnotherDAO;
-import com.spring.multiedu.dao.BbsDAO;
-import lombok.Setter;
+import com.spring.multiedu.dao.ArticleDAO;
+import com.spring.multiedu.vo.ArticleVO;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BbsService {
-    private BbsDAO bbsDAO;
-    @Setter
-    private AnotherDAO anotherDAO;
+    private ArticleDAO articleDAO;
 
-    public BbsService(BbsDAO bbsDAO) {
-        this.bbsDAO = bbsDAO;
+    public void setArticleDAO(ArticleDAO articleDAO) {
+        this.articleDAO = articleDAO;
     }
 
-    public int calcTwoNumbersAndSquare(int a, int b) {
-        int result = bbsDAO.addTwoNumber(a, b);
-        return anotherDAO.square(result);
+    public void  registerArticle(ArticleVO articleVO) {
+        articleDAO.insertArticle(articleVO);
     }
 }
