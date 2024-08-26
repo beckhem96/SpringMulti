@@ -14,12 +14,16 @@ public class BbsContoller {
     @Autowired
     private BbsService bbsService;
 
+    @GetMapping("")
+    public String index() {
+        return "index";
+    }
+
     @GetMapping("/{articleId}")
     @ResponseBody
     public ArticleVO viewDetail(@PathVariable("articleId") String articleId){
         return this.bbsService.viewArticleDetail(articleId);
     }
-
     @PostMapping("/write")
     @ResponseBody
     public ArticleVO writeArticle(@RequestBody ArticleVO articleVo) {
