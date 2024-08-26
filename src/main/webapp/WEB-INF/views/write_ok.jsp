@@ -1,3 +1,4 @@
+<jsp:useBean id="article" scope="request" type="com.spring.multiedu.vo.ArticleVO"/>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -11,6 +12,12 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Write Ok</h1>
+<h1>Write Ok</h1>
+<ul>
+    <li>${article.articleId}</li>
+    <li>${article.articleAuthor}</li>
+    <li>${article.articleTitle}</li>
+    <li>${article.articleContent}</li>
+</ul>
 </body>
 </html>
