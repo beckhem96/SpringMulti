@@ -15,10 +15,21 @@ public class BbsContoller {
     private BbsService bbsService;
 
     @GetMapping("/{articleId}")
-    public String viewDetail(@PathVariable String articleId) {
-        System.out.println(articleId);
-        return "write_ok";
+    @ResponseBody
+    public ArticleVO viewDetail(@PathVariable("articleId") String articleId){
+        return this.bbsService.viewArticleDetail(articleId);
     }
+
+    @PostMapping("/write")
+    @ResponseBody
+    public ArticleVO writeArticle(@RequestBody ArticleVO articleVo) {
+        return articleVo;
+    }
+//    @GetMapping("/{articleId}")
+//    public String viewDetail(@PathVariable String articleId) {
+//        System.out.println(articleId);
+//        return "write_ok";
+//    }
 
     @GetMapping("/write")
     public String write(@RequestParam("author") String author) {
@@ -26,10 +37,10 @@ public class BbsContoller {
         System.out.println("get");
         return "write_ok";
     }
-    @PostMapping("/write")
-    public ModelAndView doWrite(ArticleVO articleVO) {
-        bbsService.registerArticle(articleVO);
-        System.out.println("post");
-        return new ModelAndView("write_ok").addObject("article", articleVO);
-    }
+//    @PostMapping("/write")
+//    public ModelAndView doWrite(ArticleVO articleVO) {
+//        bbsService.registerArticle(articleVO);
+//        System.out.println("post");
+//        return new ModelAndView("write_ok").addObject("article", articleVO);
+//    }
 }

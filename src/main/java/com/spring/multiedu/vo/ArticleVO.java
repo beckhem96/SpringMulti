@@ -1,7 +1,7 @@
 package com.spring.multiedu.vo;
 
 public class ArticleVO {
-    private int articleId;
+    private String articleId;
     private String articleTitle;
     private String articleAuthor;
     private String articleContent;
@@ -10,7 +10,7 @@ public class ArticleVO {
 
     }
 
-    public int getArticleId() {
+    public String getArticleId() {
         return articleId;
     }
 
@@ -22,7 +22,7 @@ public class ArticleVO {
         return articleAuthor;
     }
 
-    public void setArticleId(int articleId) {
+    public void setArticleId(String articleId) {
         this.articleId = articleId;
     }
 
@@ -52,7 +52,7 @@ public class ArticleVO {
         return articleContent;
     }
 
-    public ArticleVO(int articleId, String articleTitle, String articleAuthor, String articleContent) {
+    public ArticleVO(String articleId, String articleTitle, String articleAuthor, String articleContent) {
         this.articleId = articleId;
         this.articleTitle = articleTitle;
         this.articleAuthor = articleAuthor;

@@ -14,4 +14,8 @@ public class BbsService {
     public void  registerArticle(ArticleVO articleVO) {
         articleDAO.insertArticle(articleVO);
     }
+
+    public ArticleVO viewArticleDetail(String articleId) {
+        return new ArticleVO(articleId, "lee", "test", "testim");
+    }
 }
