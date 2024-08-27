@@ -26,18 +26,11 @@
     </beans:bean>
 
     <!-- 프로젝트 패키지이름 확인 -->
-    <context:component-scan base-package="com.spring.multiedu" />
+    <context:component-scan base-package="com.spring.multiedu" use-default-filters="false" >
+<!--        명시적으로  servlet context에서 Controller Annotation을 탐색해 controller만 주입-->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 <!--    <mvc:annotation-driven/> 이렇게 mvc:를 붙이는 경우도 있음-->
     <mvc:annotation-driven/>
-
-<!--    classpath root는 resources-->
-    <context:property-placeholder location="classpath:config/database.properties"/>
-
-    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-        <beans:property name="driverClass" value="${db.driverClass}"/>
-        <beans:property name="url" value="${db.url}"/>
-        <beans:property name="username" value="${db.username}"/>
-        <beans:property name="password" value="${db.password}"/>
-    </beans:bean>
 
 </beans:beans>
