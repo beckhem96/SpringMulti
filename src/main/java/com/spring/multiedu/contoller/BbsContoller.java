@@ -26,8 +26,9 @@ public class BbsContoller {
     }
     @PostMapping("/write")
     @ResponseBody
-    public ArticleVO writeArticle(@RequestBody ArticleVO articleVo) {
-        return articleVo;
+    public void writeArticle(@RequestBody ArticleVO articleVo) {
+        System.out.println("ssss");
+        this.bbsService.registerArticle(articleVo);
     }
 //    @GetMapping("/{articleId}")
 //    public String viewDetail(@PathVariable String articleId) {
@@ -35,12 +36,12 @@ public class BbsContoller {
 //        return "write_ok";
 //    }
 
-    @GetMapping("/write")
-    public String write(@RequestParam("author") String author) {
-        bbsService.registerArticle(new ArticleVO());
-        System.out.println("get");
-        return "write_ok";
-    }
+//    @GetMapping("/write")
+//    public String write(@RequestParam("author") String author) {
+//        bbsService.registerArticle(new ArticleVO());
+//        System.out.println("get");
+//        return "write_ok";
+//    }
 //    @PostMapping("/write")
 //    public ModelAndView doWrite(ArticleVO articleVO) {
 //        bbsService.registerArticle(articleVO);

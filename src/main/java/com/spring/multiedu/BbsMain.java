@@ -9,7 +9,6 @@ public class BbsMain {
     public static void main(String[] args) {
         AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("/spring-context.xml");
         BbsService service = ctx.getBean("bbsService", BbsService.class);
-        service.registerArticle(new ArticleVO());
 //        System.out.println(result);
     }
 }

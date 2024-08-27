@@ -9,9 +9,9 @@
         <param-name>contextConfigLocation</param-name>
 <!--        root context는 여러개 생성 가능, 아래는 datasource 파일 따로 등록해주는 것, 근데 *로 다 등록 가능-->
         <param-value>
-<!--            /WEB-INF/root-context.xml-->
-<!--            /WEB-INF/datasource.xml-->
-            /WEB-INF/*.xml
+            /WEB-INF/root-context.xml
+            /WEB-INF/datasource.xml
+<!--            /WEB-INF/*.xml-->
         </param-value>
     </context-param>
     <listener>
