@@ -8,4 +8,9 @@ public class ArticleDAO {
     public void insertArticle(ArticleVO vo) {
         System.out.println(vo);
     }
+
+    public ArticleVO selectArticleById(String articleId) {
+        ArticleVO vo = new ArticleVO("10", "lee", "test", "testis");
+        return vo;
+    }
 }

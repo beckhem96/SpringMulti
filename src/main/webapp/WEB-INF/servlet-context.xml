@@ -30,4 +30,14 @@
 <!--    <mvc:annotation-driven/> 이렇게 mvc:를 붙이는 경우도 있음-->
     <mvc:annotation-driven/>
 
+<!--    classpath root는 resources-->
+    <context:property-placeholder location="classpath:config/database.properties"/>
+
+    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <beans:property name="driverClass" value="${db.driverClass}"/>
+        <beans:property name="url" value="${db.url}"/>
+        <beans:property name="username" value="${db.username}"/>
+        <beans:property name="password" value="${db.password}"/>
+    </beans:bean>
+
 </beans:beans>
